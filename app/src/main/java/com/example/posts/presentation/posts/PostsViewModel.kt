@@ -18,7 +18,6 @@ class PostsViewModel(private val postsRepository: PostsRepository) : ViewModel()
         const val PREFETCH_DISTANCE = 3
     }
 
-
     val posts: Flow<PagingData<PostPreview>> = Pager(
             config = PagingConfig(
                 pageSize = PAGE_SIZE,

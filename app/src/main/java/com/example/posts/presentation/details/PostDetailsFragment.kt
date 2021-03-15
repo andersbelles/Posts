@@ -1,4 +1,4 @@
-package com.example.posts.presentation.postdetails
+package com.example.posts.presentation.details
 
 import android.os.Bundle
 import android.view.View
@@ -11,7 +11,6 @@ import com.example.domain.model.Post
 import com.example.posts.R
 import com.example.posts.databinding.FragmentPostDetailsBinding
 import com.example.posts.databinding.LayoutErrorBinding
-import com.example.posts.presentation.UiState
 import kotlinx.coroutines.flow.collect
 import org.koin.android.viewmodel.ext.android.viewModel
 

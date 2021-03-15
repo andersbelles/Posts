@@ -20,7 +20,7 @@
 
     <fragment
         android:id="@+id/navPostDetails"
-        android:name="com.example.posts.presentation.postdetails.PostDetailsFragment"
+        android:name="com.example.posts.presentation.details.PostDetailsFragment"
         android:label="Post #{postId}">
         <argument
             android:name="postId"

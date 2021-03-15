@@ -1,11 +1,10 @@
-package com.example.posts.presentation.postdetails
+package com.example.posts.presentation.details
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.domain.model.Post
 import com.example.domain.model.Result
 import com.example.domain.repository.PostsRepository
-import com.example.posts.presentation.UiState
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.launch

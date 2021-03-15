@@ -4,7 +4,5 @@ import com.example.data.source.remote.NetworkClient
 import org.koin.dsl.module
 
 val networkModule = module {
-    single {
-        NetworkClient.createNetworkClient()
-    }
+    single { NetworkClient.createNetworkClient() }
 }

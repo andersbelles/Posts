@@ -40,8 +40,6 @@ android {
 dependencies {
     implementation project(path: ':domain')
 
-    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutines_version"
-
     api "com.apollographql.apollo:apollo-runtime:$apollo_version"
     api "com.apollographql.apollo:apollo-android-support:$apollo_version"
     api "com.apollographql.apollo:apollo-coroutines-support:$apollo_version"

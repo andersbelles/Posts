@@ -1,4 +1,4 @@
-package com.example.posts.presentation
+package com.example.posts.presentation.details
 import com.example.domain.model.Error
 
 sealed class UiState<out T> {
