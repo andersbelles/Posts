@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Posts</string>
+    <string name="post_details_username_format">Author: %s</string>
+    <string name="title_posts">Posts</string>
+    <string name="no_posts_status">No posts were loaded</string>
+    <string name="posts_button_retry">Retry</string>
+</resources>

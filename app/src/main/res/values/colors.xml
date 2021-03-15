@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="blue_grey_600">#546e7a</color>
+    <color name="blue_grey_dark">#29434e</color>
+
+    <color name="orange_600">#fb8c00</color>
+    <color name="orange_dark">#c25e00</color>
+
+    <color name="black">@android:color/black</color>
+    <color name="white">@android:color/white</color>
+
+    <color name="colorTextDark">#1A1C1F</color>
+    <color name="colorWidgetGray">#E1E1E1</color>
+</resources>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <style name="Title" parent="TextAppearance.AppCompat">
+        <item name="android:textColor">@color/colorTextDark</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="SnackbarButtonStyle" parent="@style/Widget.MaterialComponents.Button.TextButton.Snackbar">
+        <item name="android:textColor">?colorSecondary</item>
+    </style>
+
+    <style name="CircularProgressIndicatorStyle" parent="@style/Widget.MaterialComponents.CircularProgressIndicator">
+        <item name="indicatorColor">?colorSecondary</item>
+        <item name="android:indeterminate">true</item>
+    </style>
+
+    <style name="LinearProgressIndicatorStyle" parent="@style/Widget.MaterialComponents.LinearProgressIndicator">
+        <item name="indicatorColor">?colorSecondary</item>
+        <item name="android:indeterminate">true</item>
+        <item name="android:indeterminateBehavior">repeat</item>
+    </style>
+
+    <style name="ButtonStyle" parent="Widget.MaterialComponents.Button">
+        <item name="android:backgroundTint">?colorSecondary</item>
+    </style>
+
+</resources>
