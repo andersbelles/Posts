@@ -6,8 +6,9 @@
 - Koin as a dependency injection framework
 - Navigation component
 - ViewModel, ViewBinding (using viewbinding property delegate lib)
-- RecyclerView (with DiffUtil) with Paging 3
+- RecyclerView (with DiffUtil)
 - Apollo GraphQL
+- Paging 3
 
 The app is built on MVVM architectural pattern using multi-module Clean Architecture approach.
 
