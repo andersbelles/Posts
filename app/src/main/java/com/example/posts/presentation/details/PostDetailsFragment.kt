@@ -28,13 +28,13 @@ class PostDetailsFragment : Fragment(R.layout.fragment_post_details) {
         super.onViewCreated(view, savedInstanceState)
 
         viewModel.apply {
-            if (uiState.value is UiState.Initial) {
+            if (viewState.value is ViewState.Initial) {
                 fetchPost(args.postId)
             }
         }
 
         lifecycleScope.launchWhenStarted {
-            viewModel.uiState.collect {
+            viewModel.viewState.collect {
                 initWithUiState(it)
             }
         }
@@ -44,26 +44,26 @@ class PostDetailsFragment : Fragment(R.layout.fragment_post_details) {
         }
     }
 
-    private fun initWithUiState(uiState: UiState<Post>) {
-        binding.usernameTextView.isVisible = uiState is UiState.Success.HasData
-        binding.titleTextView.isVisible = uiState is UiState.Success.HasData
-        binding.bodyTextView.isVisible = uiState is UiState.Success.HasData
-        binding.fullnameTextView.isVisible = uiState is UiState.Success.HasData
+    private fun initWithUiState(viewState: ViewState<Post>) {
+        binding.usernameTextView.isVisible = viewState is ViewState.Success.HasData
+        binding.titleTextView.isVisible = viewState is ViewState.Success.HasData
+        binding.bodyTextView.isVisible = viewState is ViewState.Success.HasData
+        binding.fullnameTextView.isVisible = viewState is ViewState.Success.HasData
 
-        binding.progressIndicator.isVisible = uiState is UiState.Loading
+        binding.progressIndicator.isVisible = viewState is ViewState.Loading
 
-        errorLayoutBinding.errorTextView.isVisible = uiState is UiState.Failure.AllowRetry
-        errorLayoutBinding.retryButton.isVisible = uiState is UiState.Failure.AllowRetry
+        errorLayoutBinding.errorTextView.isVisible = viewState is ViewState.Failure.AllowRetry
+        errorLayoutBinding.retryButton.isVisible = viewState is ViewState.Failure.AllowRetry
 
-        when (uiState) {
-            is UiState.Success.HasData -> {
+        when (viewState) {
+            is ViewState.Success.HasData -> {
                 binding.usernameTextView.text =
-                    getString(R.string.post_details_username_format, uiState.data.user.username)
-                binding.titleTextView.text = uiState.data.title
-                binding.bodyTextView.text = uiState.data.body
-                binding.fullnameTextView.text = uiState.data.user.fullName
+                    getString(R.string.post_details_username_format, viewState.data.user.username)
+                binding.titleTextView.text = viewState.data.title
+                binding.bodyTextView.text = viewState.data.body
+                binding.fullnameTextView.text = viewState.data.user.fullName
             }
-            is UiState.Failure.AllowRetry -> errorLayoutBinding.errorTextView.text = uiState.error.message
+            is ViewState.Failure.AllowRetry -> errorLayoutBinding.errorTextView.text = viewState.error.message
         }
     }
 }

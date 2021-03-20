@@ -13,13 +13,17 @@ suspend fun <T : Any> safeApiCall(call: suspend () -> Response<T>): Result<T> =
         val response = call.invoke()
 
         when {
-            response.hasErrors() ->  Result.Failure(response.errors!!.map { it.toDomain() })
+            response.hasErrors() -> Result.Failure(response.errors!!.map { it.toDomain() })
             else -> Result.Success(response.data as T)
         }
 
     } catch (e: ApolloNetworkException) {
         when (e.cause) {
-            is UnknownHostException -> Result.Failure(listOf(Error.Network.NotConnected(originalException = e)))
+            is UnknownHostException -> Result.Failure(
+                listOf(
+                    Error.Network.NotConnected(originalException = e)
+                )
+            )
             else -> Result.Failure(listOf(Error.Network.Unknown(e.message.orEmpty(), e)))
         }
     } catch (e: Exception) {

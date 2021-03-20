@@ -16,4 +16,4 @@ The app is built on MVVM architectural pattern using multi-module Clean Architec
 
 ## Installation
 
-- Android Studio 4.1.2 Stable with Kotlin plugin 1.4.31 is required to run the app.
+- Android Studio 4.1.3 Stable with Kotlin plugin 1.4.31 is required to run the app.
