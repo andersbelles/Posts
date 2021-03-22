@@ -11,14 +11,14 @@ import kotlinx.coroutines.launch
 
 class PostDetailsViewModel(private val postsRepository: PostsRepository) : ViewModel() {
 
-    private var _uiState = MutableStateFlow<ViewState<Post>>(ViewState.Initial)
-    val viewState: StateFlow<ViewState<Post>> get() = _uiState
+    private var _viewState = MutableStateFlow<ViewState<Post>>(ViewState.Initial)
+    val viewState: StateFlow<ViewState<Post>> get() = _viewState
 
     fun fetchPost(id: String) = viewModelScope.launch {
-        _uiState.value = ViewState.Loading
+        _viewState.value = ViewState.Loading
         when (val result = postsRepository.getPost(id)){
-            is Result.Success -> _uiState.value = ViewState.Success.HasData(result.data)
-            is Result.Failure -> _uiState.value = ViewState.Failure.AllowRetry(result.errors[0])
+            is Result.Success -> _viewState.value = ViewState.Success.HasData(result.data)
+            is Result.Failure -> _viewState.value = ViewState.Failure.AllowRetry(result.errors[0])
         }
     }
 
