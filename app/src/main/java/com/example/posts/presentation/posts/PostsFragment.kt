@@ -16,7 +16,9 @@ import com.example.posts.databinding.LayoutErrorBinding
 import com.example.posts.presentation.posts.adapter.PostLoadStateAdapter
 import com.example.posts.presentation.posts.adapter.PostsAdapter
 import kotlinx.coroutines.flow.collect
-import org.koin.android.viewmodel.ext.android.viewModel
+import org.koin.android.ext.android.inject
+import org.koin.androidx.viewmodel.ext.android.getViewModel
+import org.koin.androidx.viewmodel.ext.android.viewModel
 
 
 class PostsFragment : Fragment(R.layout.fragment_posts) {

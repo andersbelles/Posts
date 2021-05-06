@@ -12,7 +12,7 @@ import com.example.posts.R
 import com.example.posts.databinding.FragmentPostDetailsBinding
 import com.example.posts.databinding.LayoutErrorBinding
 import kotlinx.coroutines.flow.collect
-import org.koin.android.viewmodel.ext.android.viewModel
+import org.koin.androidx.viewmodel.ext.android.viewModel
 
 
 class PostDetailsFragment : Fragment(R.layout.fragment_post_details) {

@@ -29,7 +29,7 @@ class PostsRepositoryImpl(private val networkClient: ApolloClient) : PostsReposi
         val result =
             safeApiCall { networkClient.query(GetPostPreviewsQuery(pageQueryOptions)).await() }
         return when (result) {
-            is Result.Success -> Result.Success(result.data.posts?.toDomain() ?: emptyList())
+            is Result.Success -> Result.Success(result.data.posts?.toDomain()!!)
             is Result.Failure -> result
         }
     }
