@@ -8,8 +8,8 @@ import com.example.domain.model.PostPreview
 import com.example.domain.model.User
 import java.lang.Exception
 
-fun GetPostPreviewsQuery.Posts?.toDomain(): List<PostPreview> {
-    return this?.data?.map {
+fun GetPostPreviewsQuery.Posts.toDomain(): List<PostPreview> {
+    return this.data?.map {
         PostPreview(
             it?.id.orEmpty(),
             it?.title.orEmpty(),
